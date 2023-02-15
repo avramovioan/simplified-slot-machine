@@ -30,7 +30,9 @@ namespace SlotMachine
                 System.Console.WriteLine();
 
                 double winnings = CalculateWinnings(accumulatedCoefficient, stake);
+                winnings = Math.Round(winnings, 2); //rounding up to make sure it is the same as in terminal
                 deposit = deposit - stake + winnings;
+                deposit = Math.Round(deposit, 2); //rounding up to make sure it is the same as in terminal
                 System.Console.WriteLine($"You have won: {winnings.ToString("N2")}");
                 System.Console.WriteLine($"Current balance is: {deposit.ToString("N2")}");
             }
